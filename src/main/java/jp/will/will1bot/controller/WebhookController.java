@@ -1,7 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Class to receive incomming HTTP requests on /webhook route and dispatches
+ * to service layer, where the business rules are managed
  */
 package jp.will.will1bot.controller;
 
@@ -20,6 +19,7 @@ import javax.ws.rs.core.MediaType;
 import jp.will.will1bot.controller.marshalling.ReplyMarshall;
 import jp.will.will1bot.controller.parser.MessageParser;
 import jp.will.will1bot.service.RequestService;
+import org.json.simple.parser.ParseException;
 
 /**
  *
@@ -47,17 +47,8 @@ public class WebhookController {
         catch(IllegalArgumentException e){
             return new ReplyMarshall(income.fromWhomName() + ", " + e.getMessage(), income.fromWhomId());
         }
-        catch(ProcessingException | IOException e){
+        catch(ProcessingException | IOException | ParseException e){
             return new ReplyMarshall(income.fromWhomName() + ", the service is currently unavailable. Please try again later.", income.fromWhomId());
         }
     }
 }
-
-/*
-            else if(e.getMessage().equals("args")){
-                return new ReplyMarshall(income.fromWhomName() + ", command argument missing.", income.fromWhomId());
-            }
-            else{
-                return new ReplyMarshall(income.fromWhomName() + ", invalid command " + e.getMessage(), income.fromWhomId());
-            }
-*/

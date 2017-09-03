@@ -41,6 +41,11 @@
             <artifactId>jersey-media-moxy</artifactId>
             <version>2.26-b09</version>
         </dependency>
+        <dependency>
+            <groupId>com.googlecode.json-simple</groupId>
+            <artifactId>json-simple</artifactId>
+            <version>1.1.1</version>
+        </dependency>
     </dependencies>
 
     <build>

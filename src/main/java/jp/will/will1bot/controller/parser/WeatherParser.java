@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Parsing class for informations about weather from weather API
  */
 package jp.will.will1bot.controller.parser;
 
@@ -18,7 +16,6 @@ public class WeatherParser {
     private Conditions main;
     private Wind wind;
     private String name;
-    private long dt;
 
     public WeatherParser() {
         
@@ -85,13 +82,5 @@ public class WeatherParser {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public long getDt() {
-        return dt;
-    }
-
-    public void setDt(long dt) {
-        this.dt = dt;
     }
 }

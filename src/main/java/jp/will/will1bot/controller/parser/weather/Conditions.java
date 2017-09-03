@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Parsing class for main object in weather informations from API
  */
 package jp.will.will1bot.controller.parser.weather;
 

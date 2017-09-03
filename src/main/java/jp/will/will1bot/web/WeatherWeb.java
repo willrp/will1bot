@@ -1,7 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Class responsible for fetching data from the weather API. Like a DAO, but
+ * for data from Internet
  */
 package jp.will.will1bot.web;
 

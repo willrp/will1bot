@@ -1,7 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Service class that manages every request incoming from WebhookController and
+ * delegates the processing to the inner service layer classes
  */
 package jp.will.will1bot.service;
 
@@ -9,6 +8,7 @@ import java.util.Properties;
 import javax.ws.rs.ProcessingException;
 import jp.will.will1bot.controller.marshalling.ReplyMarshall;
 import jp.will.will1bot.controller.parser.MessageParser;
+import org.json.simple.parser.ParseException;
 
 /**
  *
@@ -42,13 +42,11 @@ public class RequestService {
         }
     }
     
-    public ReplyMarshall process(MessageParser income) throws IllegalArgumentException, ProcessingException{
+    public ReplyMarshall process(MessageParser income) throws IllegalArgumentException, ProcessingException, ParseException{
         this.init(income.getMessage());
         this.requesterId = income.fromWhomId();
         this.requesterName = income.fromWhomName();
         this.hour = income.getHour();
-        
-        System.out.println(this);
         
         switch(this.command.toLowerCase()){
             case "konnichiwa":
@@ -65,10 +63,5 @@ public class RequestService {
             default:
                 return new ReplyMarshall("Sorry " + this.requesterName + ", couldn't understand command " + this.command + ".",this.requesterId);
         }
-    }
-
-    @Override
-    public String toString() {
-        return "RequestService{" + "command=" + command + ", args=" + args + ", requesterId=" + requesterId + ", requesterName=" + requesterName + '}';
     }
 }
