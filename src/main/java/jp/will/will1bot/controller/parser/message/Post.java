@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package jp.will.will1bot.controller.parser;
+package jp.will.will1bot.controller.parser.message;
 
 /**
  *
@@ -14,16 +14,18 @@ public class Post {
     private long topicdId;
     private String message;
     private Account account;
+    private String createdAt;
 
-    public Post(){
+    Post(){
         
     }
     
-    public Post(long id, long topicdId, String message, Account account) {
+    Post(long id, long topicdId, String message, Account account, String createdAt) {
         this.id = id;
         this.topicdId = topicdId;
         this.message = message;
         this.account = account;
+        this.createdAt = createdAt;
     }
     
     public long getAccountId(){
@@ -31,7 +33,7 @@ public class Post {
     }
     
     public String getAccountName(){
-        return this.account.getFullName().split(" ")[0];
+        return this.account.getFullName().split("\\s", 2)[0];
     }
 
     public long getId() {
@@ -64,5 +66,13 @@ public class Post {
 
     public void setAccount(Account account) {
         this.account = account;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
     }
 }

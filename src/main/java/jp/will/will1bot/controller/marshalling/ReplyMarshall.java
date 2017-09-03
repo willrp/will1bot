@@ -9,15 +9,15 @@ package jp.will.will1bot.controller.marshalling;
  *
  * @author Will
  */
-public class Reply {
+public class ReplyMarshall {
     private String message;
     private long replyTo;
 
-    public Reply() {
+    public ReplyMarshall() {
         
     }
 
-    public Reply(String message, long replyTo) {
+    public ReplyMarshall(String message, long replyTo) {
         this.message = message;
         this.replyTo = replyTo;
     }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package jp.will.will1bot.controller.parser;
+package jp.will.will1bot.controller.parser.message;
 
 /**
  *
@@ -13,11 +13,11 @@ public class Topic {
     private long id;
     private String name;   
 
-    public Topic() {
+    Topic() {
         
     }
 
-    public Topic(long id, String name) {
+    Topic(long id, String name) {
         this.id = id;
         this.name = name;
     }    
@@ -36,7 +36,5 @@ public class Topic {
 
     public void setName(String name) {
         this.name = name;
-    }
-    
-    
+    }   
 }

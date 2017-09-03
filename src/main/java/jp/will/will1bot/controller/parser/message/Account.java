@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package jp.will.will1bot.controller.parser;
+package jp.will.will1bot.controller.parser.message;
 
 /**
  *
@@ -14,11 +14,11 @@ public class Account {
     private String name;
     private String fullName;
 
-    public Account(){
+    Account(){
         
     }
     
-    public Account(long id, String name, String fullName) {
+    Account(long id, String name, String fullName) {
         this.id = id;
         this.name = name;
         this.fullName = fullName;
